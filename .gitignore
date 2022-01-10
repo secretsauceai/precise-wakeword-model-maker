@@ -15,7 +15,6 @@ __pycache__/
 *.pb
 *.params
 *.net
-*.json
 *.pbtxt
 *.wav
 
