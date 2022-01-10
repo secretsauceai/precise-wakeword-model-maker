@@ -1,0 +1,37 @@
+{
+    "random_split_directories": [
+        "wake-word/",
+        "not-wake-word/background/"
+        ],
+    "even_odd_split_directories": [
+        "wake-word/variations/"
+        ],
+    "three_four_split_directories": [
+        "not-wake-word/parts/"
+    ],
+    "root_model_name": "experiment",
+    "source_directories": [
+        "background_noise/wake-word/",
+        "background_noise/wake-word/variations/",
+        "background_noise/test/wake-word/",
+        "background_noise/test/wake-word/variations/"
+        ],
+    "destination_directories": [
+        "wake-word/background_noise/",
+        "wake-word/background_noise/variations/",
+        "test/wake-word/background_noise/",
+        "test/wake-word/background_noise/variations/"
+        ],
+
+    "directories_to_gauss": [
+        "/wake-word/",
+        "/wake-word/variations/",
+        "/not-wake-word/background/",
+        "/not-wake-word/parts/",
+        "/test/wake-word/",
+        "/test/wake-word/variations/",
+        "/test/not-wake-word/background/",
+        "/test/not-wake-word/parts/"
+        ]
+
+}

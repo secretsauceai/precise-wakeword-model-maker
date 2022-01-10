@@ -1,0 +1,97 @@
+[ {
+    "dialog_name": "main_menu_optional_dialog",
+    "dialog_description": "optional dialog to be prompted if the user hasn't fill in the config.json file",
+    "dialog_content": [
+        {
+            "text": "Please enter the relative path to the wakeword recordings directory (ie audio/):\n",
+            "dialog_type": "input-string-wakeword_recordings_directory"
+        },
+        {
+            "text": "Please enter the name you want to give the wakeword model (ie. 'wakeword_model'):\n",
+            "dialog_type": "input-string-model_name"
+        }
+    ]
+},
+    {
+        "dialog_name": "main_menu_dialog",
+        "dialog_description": "main menu dialog to choose data prep options",
+        "dialog_content": [
+            {
+                "text": "Please enter your choice\n1. Create base model from wakeword recorder data\n2. Create improved model by generating extra data \n3. Further improve the model by processing and generating more data with more audio directories\n4. Do it all and exit\n5. Exit\n\n",
+                "dialog_type": "input-numbered-main_choice"
+            
+            }
+        ]
+},
+    {
+    
+        "dialog_name": "base_model_menu_dialog",
+        "dialog_description": "generating the base model menu dialog",
+        "dialog_content": [
+            {
+
+                "text":"Splitting the data from {source_directory}",
+                "dialog_type": "inform-splitting_data"
+            },
+
+            {
+                "text": "Running experimental training to find the optimal test-train split..",
+                "dialog_type": "inform-experiment_train_test_split"
+            }, 
+
+            {
+                "text": "Average test set accuracy: {average_val_acc} \u00B1 {standard_deviation_val_acc}\nAverage train set accuracy: {average_acc} \u00B1 {standard_deviation_acc}",
+                "dialog_type": "inform-accuracy"
+            },
+
+            {
+                "text": "{selected_model_name} produces the best results with {selected_model_results}",
+                "dialog_type": "inform-best_model"
+            },
+
+            {
+                "text": "Starting incremental training on {random_user_recordings_directory}",
+                "dialog_type": "inform-incremental_training_start"
+            },
+
+            {
+                "text": "Incremental training on {random_user_recordings_directory} complete",
+                "dialog_type": "inform-incremental_training_complete"
+            },
+
+            {
+                "text": "training {wakeword_model_name} with the new data..",
+                "dialog_type": "inform-training_start"
+            },
+
+            {
+                "text": "{wakeword_model_name} training complete",
+                "dialog_type": "inform-training_complete"
+            },
+
+            {
+                "text": "changed {selected_model_name} to {wakeword_model_name}",
+                "dialog_type": "inform-changed_model_name"
+            },
+
+            {
+                "text": "Average accuracies of the base model...",
+                "dialog_type": "inform-base_model_accuracies"
+            },
+
+            {
+                "text": "Original best model: \n{selected_model_name}: {selected_model_results}\n dataset size: {dataset_size}",
+                "dialog_type": "inform-original_best_base_model_results"
+            },
+
+            {
+                "text": "Try the model in: precise-listen {wakeword_model_name}.net in your command line. Run 2 to continue generating {wakeword_model_name} data to production quality",
+                "dialog_type": "inform-continue"
+            }
+
+
+
+        ]
+    }
+
+]
