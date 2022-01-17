@@ -1,9 +1,9 @@
-{   "audio_source_directory": "flow_test_delete_after/",
+{   "audio_source_directory": "audio/flow_test_delete_after/",
     "wakeword_model_name": "test_wakeword_model_delete_after",
-    "pdsounds_directory": "flow_test_delete_after/pdsounds_march2009/mp3/",
+    "pdsounds_directory": "audio/flow_test_delete_after/pdsounds_march2009/mp3/",
     "extra_audio_directories_to_process": [ 
-        "jarvis_S_B_remixed/random/other/non-utterances/noises/",
-        "jarvis_S_B_remixed/random/other/common_voice/"
+        "audio/noises/",
+        "audio/common_voice/"
     ],
     "extra_audio_directories_labels": [
         "non-utterances",

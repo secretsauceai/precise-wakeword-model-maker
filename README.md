@@ -1,4 +1,4 @@
-# wakeword-data-prep
+# Precise Wakeword Model Maker
 This is a work in progress! 
 
 After collecting your wake word data set with the [wakeword data collection tool](https://github.com/AmateurAcademic/wakeword-recorder-py), you can use this tool to:
@@ -45,8 +45,9 @@ This is still a work in progress.
 * ~~adding noise~~
     * ~~Gaussian noise~~
     * ~~background noise (precise-add-noise)~~
-* Refactor model analytics and choosing the best model
-* Refactor the training function to pass both measures: the default `loss` and `val_loss`
+* ~~Refactor model analytics and choosing the best model~~
+* ~~Refactor the training function to pass both measures: the default `loss` and `val_loss`~~
+* Test when and number of epochs to switch to `val_loss` (this prevents overfitting!)
 * Test smaller batch sizes and scaling them up
 * test output models (both tf1.13 and tflite) for production
    * hope this one passes 
