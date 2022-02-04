@@ -13,9 +13,24 @@ NOTE: The model analytics doesn't always pick the best-best model, a refactor is
 # How does it work?
 TODO: come up with really chill explaination about data categories, sub-categories they boost the model, optimizing model selection and training, noisy data generation, automatically incrementally collecting new data, and curriculum learning. 
 
+## Installation
+### Manually installing with Python
+After following the instructions (NOTE: Mycroft Precise only works for Python versions up to 3.7.x!) to install from the [Mycroft Precise readme](https://github.com/secretsauceai/precise-wakeword-model-maker#source-install) (skip over the git clone part, I assume you have git cloned this repo), go into your venv (ie `source .venv/source/bin/activate`) and run `pip install -r requirements_data_prep.txt --force-reinstall` (there seems to currently be an issue with some of the requirements from the original precise not working with current versions of certain packages)
+### Dockerfile
+* Get the dockerfile from this repo 
+* `docker build -t precise-wakeword-model-maker .`
+* You can run the container with such a command:
+
+```
+docker run -it \
+  -v "local_directory_for_model_output:/app/out" \
+  -v "local_collected_audio_directory:/data" \
+  -v "local_directory_path_for_config/data_prep_user_configuration.json:/app/data_prep_user_configuration.json" \
+  precise-wakeword-model-maker
+  ```
+
 ## Usage: 
-* After following the instructions to install from the [Mycroft Precise readme](https://github.com/secretsauceai/precise-wakeword-model-maker#source-install) (skip over the git clone part, I assume you have git cloned this repo!), go into your venv (ie source .venv/source/bin/activate) and run `pip install -r requirements_data_prep.txt --force-reinstall` (there seems to currently be an issue with some of the requirements from the original precise not working with current versions of certain packages)
-* configure the  `data_prep_user_configuration.json` with the relative paths: 
+* configure the  `data_prep_user_configuration.json` with the paths: 
 	* `audio_source_directory` (the main directory for the recordings from `wakeword_recorder`, 
 	* `wakeword_model_name` the name you want to give the wakeword model,
     * `pdsounds_directory` the directory to the mp3 (or wav) files: [pdsounds](http://pdsounds.tuxfamily.org/),
